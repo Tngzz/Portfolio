@@ -561,7 +561,7 @@ input, select, textarea {
 		}
 
 		@media screen and (max-width: 1280px) {
-
+			
 			.row {
 				display: flex;
 				flex-wrap: wrap;
@@ -806,7 +806,7 @@ input, select, textarea {
 		}
 
 		@media screen and (max-width: 980px) {
-
+			
 			.row {
 				display: flex;
 				flex-wrap: wrap;
@@ -1047,6 +1047,7 @@ input, select, textarea {
 						.row.gtr-200.gtr-uniform > * {
 							padding-top: 2.5em;
 						}
+			
 
 		}
 
@@ -1553,7 +1554,7 @@ input, select, textarea {
 		.image img {
 			display: block;
 			width: 100%;
-			height: 377px;
+			height: 373px;
 			object-fit: cover;
 		}
 
@@ -2189,6 +2190,7 @@ input, select, textarea {
 				padding-left: 0.5em;
 				margin-left: 0.5em;
 			}
+			
 
 		}
 
@@ -2225,7 +2227,7 @@ input, select, textarea {
 			width: 25px;
 			height: 25px;
 			right: -17px;
-			background-color: white;
+			background-color: #E1AA96;
 			border: 4px solid #E1AA96;
 			top: 15px;
 			border-radius: 50%;
@@ -2281,6 +2283,7 @@ input, select, textarea {
 			background-color: #f0c1c4;
 			position: relative;
 			border-radius: 6px;
+			background-image: url('images/bg.jpg');
 		  }
 	
 		  
@@ -2315,6 +2318,9 @@ input, select, textarea {
 			.right {
 			  left: 0%;
 			}
+			.flip-card {
+				width: 100%;
+			}
 		  }
 
 		  h3 {
@@ -2328,6 +2334,7 @@ input, select, textarea {
 	height: 400px;
 	perspective: 1000px; /* Remove this if you don't want the 3D effect */
   }
+
   
   /* This container is needed to position the front and back side */
   .flip-card-inner {
@@ -2337,11 +2344,15 @@ input, select, textarea {
 	text-align: center;
 	transition: transform 0.8s;
 	transform-style: preserve-3d;
+	border: solid 2px gray;
+	
+	
   }
   
   /* Do an horizontal flip when you move the mouse over the flip box container */
   .flip-card:hover .flip-card-inner {
 	transform: rotateY(180deg);
+	
   }
   
   /* Position the front and back side */
@@ -2351,6 +2362,7 @@ input, select, textarea {
 	height: 100%;
 	-webkit-backface-visibility: hidden; /* Safari */
 	backface-visibility: hidden;
+	overflow: hidden;
   }
   
   /* Style the front side (fallback if image is missing) */
@@ -2364,7 +2376,7 @@ input, select, textarea {
 	background-image: url('images/bg.jpg');
 	color: white;
 	transform: rotateY(180deg);
-	padding: 25px 10px 25px 10px;
+	padding: 15px 10px 15px 10px;
   }
 
 
@@ -2373,4 +2385,31 @@ input, select, textarea {
 	text-align: justify;
 	margin: 6px 0px 6px 0px;
 }
-		  
+
+/* Définition de l'animation avec @keyframes */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Appliquer l'animation aux éléments */
+.animated-box {
+    opacity: 0; /* Définir la transparence à 0 au début */
+    animation: fadeInLeft 1s ease-in-out forwards; /* Ajouter "forwards" pour conserver les styles finaux */
+}
+
+@media only screen and (max-width: 1000px) {
+    .flip-card {
+        width: 100%; 
+    }
+
+	.image img {
+		height: 376px;
+	}
+}
